@@ -14,6 +14,8 @@ import img12 from "../img12.jpg"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+let intervalId;
+
 function Pics()
 {
     const navigate = useNavigate();
@@ -21,7 +23,6 @@ function Pics()
     const displayOrder = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12];
     shuffleArray(displayOrder)
     let i = 0;
-    let intervalId;
 
     const [currImage,setCurrImage] = useState(displayOrder[i]);
 

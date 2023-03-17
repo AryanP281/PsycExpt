@@ -6,13 +6,15 @@ import PicQuestions from "./Pages/PicQuestions";
 import Saving from "./Pages/Saving";
 import End from "./Pages/End";
 import Part3Questionnaire from "./Pages/Part3Questionnaire";
+import Start from "./Pages/Start";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Start />} />
+          <Route path="/demo" element={<Home />} />
           <Route path="/narrative" element={<Narrative />} />
           <Route path="/pics" element={<Pics />} />
           <Route path="/pics/q" element={<PicQuestions />} />

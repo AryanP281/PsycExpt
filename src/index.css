@@ -29,3 +29,17 @@
 {
   margin-top: 20px;
 }
+
+@media screen and (max-width: 520px) {
+ #d1::placeholder {
+    font-size: 10px !important;
+  }
+
+  .background {
+    padding: 0px !important;
+  }
+
+  #question-box {
+    width: 100% !important;
+  }
+}

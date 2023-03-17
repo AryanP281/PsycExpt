@@ -21,7 +21,7 @@ function Part3Questionnaire()
     };
 
     return (<div className="background" id="home">
-            <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}}>
+            <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}} className="question-box">
                 {getQuestions()}
                 <Button variant="contained" style={{marginTop: "20px", alignSelf: "center"}}
                 onClick={(e) => {navigate("/save")}}
@@ -30,7 +30,7 @@ function Part3Questionnaire()
         </div>)
 }
 
-function QAns({question,id,dispatch})
+function QAns({question,id,dispatch}) 
 {
     return (<div style={{marginTop: "20px"}}>
             <Typography variant="body2" style={{marginBottom: "5px"}}>{question}</Typography>

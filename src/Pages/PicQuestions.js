@@ -2,7 +2,7 @@ import { Paper, Typography, TextField, RadioGroup, FormControlLabel, Radio, Butt
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from "react-router-dom";
-import { setQ1, setQ2, setQ3, setMcqVal } from "../Redux/PicsSlice";
+import { setQ1_p, setQ2_p, setQ3_p, setMcqVal_p } from "../Redux/PicsSlice";
 
 function PicQuestions()
 {
@@ -22,13 +22,19 @@ function PicQuestions()
             <Typography variant="body2" style={{marginTop: "10px"}}>What are the photos about? </Typography>
             <TextField variant="outlined" required id="nq1" multiline
             className="form-textfield" 
-            onChange={(e) => dispatch(setQ1(e.target.value))}
+            onChange={(e) => dispatch(setQ1_p(e.target.value))}
             />
             
             <Typography variant="body2" style={{marginTop: "10px"}}>Have you seen these photos before?</Typography>
             <TextField variant="outlined" required id="nq2" multiline
             className="form-textfield" 
-            onChange={(e) => dispatch(setQ2(e.target.value))}
+            onChange={(e) => dispatch(setQ2_p(e.target.value))}
+            />
+
+            <Typography variant="body2" style={{marginTop: "10px"}}>What did you like most about the photos?</Typography>
+            <TextField variant="outlined" required id="nq2" multiline
+            className="form-textfield" 
+            onChange={(e) => dispatch(setQ3_p(e.target.value))}
             />
 
             <Typography variant="h6" style={{marginTop: "10px"}}>{"Please indicate the extent to which you felt the following while reading the narrative.  While reading the narrative I felt…"}</Typography>
@@ -38,13 +44,7 @@ function PicQuestions()
 
             <Button variant="contained" style={{marginTop: "20px", alignSelf: "center"}}
             onClick={(e) => {
-                if(sessionStorage.getItem("hop") === '1')
-                {
-                    sessionStorage.setItem("hop", 2);
-                    navigate("/narrative");
-                }
-                else
-                    navigate("/save")
+                navigate("/p1")
             }}
             >Submit</Button>
         </Paper>
@@ -65,7 +65,7 @@ function Mcq({id, question, dispatch})
     
     return(<div style={{marginTop: "10px"}}>
             <Typography variant="body1">{question}</Typography>
-            <RadioGroup onChange={(e) => dispatch(setMcqVal({id,val:parseInt(e.target.value)}))}>
+            <RadioGroup onChange={(e) => dispatch(setMcqVal_p({id,val:parseInt(e.target.value)}))}>
                 {getOpts()}
             </RadioGroup>
         </div>)

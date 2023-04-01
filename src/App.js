@@ -7,6 +7,8 @@ import Saving from "./Pages/Saving";
 import End from "./Pages/End";
 import Part3Questionnaire from "./Pages/Part3Questionnaire";
 import Start from "./Pages/Start";
+import Part1Questionnaire from "./Pages/Part1Questionnaire";
+import Part2Questionnaire from "./Pages/Part2Questionnaire";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/pics/q" element={<PicQuestions />} />
           <Route path="/save" element={<Saving />} />
           <Route path="/p3" element={<Part3Questionnaire />} />
+          <Route path="/p1" element={<Part1Questionnaire />} />
+          <Route path="/p2" element={<Part2Questionnaire />} />
           <Route path="/end" element={<End />} />
         </Routes>
       </div>

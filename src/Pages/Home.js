@@ -10,6 +10,7 @@ function Home()
     const [gender, setGender] = useState(undefined);
     const [edu, setEdu] = useState(undefined);
     const [occu, setOccu] = useState(undefined);
+    const [income, setIncome] = useState(undefined);
     const navigate = useNavigate();
     
     return(<div class="background" id="home">
@@ -43,6 +44,19 @@ function Home()
                         <FormControlLabel value="other" control={<Radio />} label="Other" />
                     </RadioGroup>
                 </FormControl>
+                <FormControl style={{marginTop: "20px"}}>
+                    <FormLabel>What is your yearly household income?</FormLabel>
+                    <RadioGroup
+                        row
+                        name="row-radio-buttons-group"
+                        onChange={(e) => setIncome(e.target.value)}
+                    >
+                        <FormControlLabel value="Below 2 lakhs per annum" control={<Radio />} label="Below 2 lakhs per annum" />
+                        <FormControlLabel value="2 lakhs to 5 lakhs per annum" control={<Radio />} label="2 lakhs to 5 lakhs per annum" />
+                        <FormControlLabel value="5 lakhs to 10 lakhs" control={<Radio />} label="5 lakhs to 10 lakhs" />
+                        <FormControlLabel value="10 lakhs and above" control={<Radio />} label="10 lakhs and above" />
+                    </RadioGroup>
+                </FormControl>
                 <TextField variant="outlined" required multiline id="d1"
                 placeholder="Please write about your education (the degree you have/are studying for and the field you have/ are studying in)"
                 className="form-textfield" 
@@ -60,12 +74,17 @@ function Home()
                         alert("Incorrect input");
                     else
                     {
-                        sessionStorage.setItem("demoDetails", JSON.stringify({initials,emailAddr,age,gender,edu,occu}));
-                        sessionStorage.setItem("hop", 1);
+                        sessionStorage.setItem("demoDetails", JSON.stringify({initials,emailAddr,age,gender,edu,occu,income}));
                         if(Math.random() < 0.5)
+                        {
+                            sessionStorage.setItem("Tag", "p");
                             navigate("/pics");
+                        }
                         else
-                            navigate("/narrative")
+                        {
+                            sessionStorage.setItem("Tag", "n");
+                            navigate("/narrative");
+                        }
                     }
                 }}
                 >Submit</Button>

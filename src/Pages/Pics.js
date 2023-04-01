@@ -34,9 +34,9 @@ function Pics()
             else
             {
                 clearInterval(intervalId);
-                setTimeout(() => navigate("/pics/q"), 2000);
+                setTimeout(() => navigate("/pics/q"), 1000*30);
             }
-        }, 1000*1);
+        }, 1000*30);
     }, [])
     
 

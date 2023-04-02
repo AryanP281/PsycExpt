@@ -5,19 +5,15 @@ import { setAns } from '../Redux/P2Slice';
 
 function Part2Questionnaire()
 {
-    const ans = useSelector((state) => state.p1)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    console.log(ans)
     
     const opts = "1= Always True;\n2 = Usually True;\n3 = Usually False;\n4 = Always False;".split('\n');
-    const mcqs = [{q:"1. Is talkative "},{q:"2. Tends to find fault with others"},{q:"3. Does a thorough job "},{q:"4. Is depressed, blue "},{q:"5. Is original, comes up with new ideas "},{q:"6. Is reserved "},{q:"7. Is helpful and unselfish with others "},{q:"8. Can be somewhat careless "},{q:"9. Is relaxed, and handles stress well"},{q:"10. Is curious about many different things."},{q:"11. Is full of energy."},{q:"12. Starts quarrels with others"},{q:"13. Is a reliable worker "},{q:"14. Can be tense "},{q:"15. Is ingenious, a deep thinker "},{q:"16. Generates a lot of enthusiasm "},{q:"17. Has a forgiving nature"},{q:"18. Tends to be disorganized "},{q:"19. Worries a lot "},{q:"20. Has an active imagination "},{q:"21. Tends to be quiet "},{q:"22. Is generally trusting "},{q:"23. Tends to be lazy"},{q:"24. Is emotionally stable, not easily upset"},{q:"25. Is inventive"},{q:"26. Has an assertive personality"},{q:"27. Can be cold and aloof"},{q:"28. Perseveres until the task is finished"},{q:"29. Can be moody"},{q:"30. Values artistic, aesthetic experiences"},{q:"31. Is sometimes shy, inhibited"},{q:"32. Is considerate and kind to almost everyone"},{q:"33. Does things efficiently"},{q:"34. Remains calm in tense situations"},{q:"35. Prefers work that is routine"},{q:"36. Is outgoing, sociable"},{q:"37. Is sometimes rude to others"},{q:"38. Makes plans and follows through with them"},{q:"39. Gets nervous easily"},{q:"40. Likes to reflect, play with ideas"},{q:"41. Has few artistic interests"},{q:"42. Likes to cooperate with others"},{q:"43. Is easily distracted"},{q:"44. Is sophisticated in art, music, or literature"}];
+    const mcqs = [{q:"1. I enjoy doing work that requires the use of words."},{q:"2. There are some special times in my life that I like to relive by mentally picturing just how everything looked"},{q:"3. I can never seem to find the right word when I need"},{q:"4. I do a lot of reading "},{q:"5. When I am trying to learn something new, I’d rather watch a demonstration than read how to do it"},{q:"6. I think I often use words in the wrong way "},{q:"7. I enjoy learning new words"},{q:"8. I like to picture how I could fix up my apartment or room if I could buy anything I wanted"},{q:"9. I often make written notes to myself "},{q:"10. I like to daydream "},{q:"11. I generally prefer to use a diagram rather than a written set of instructions "},{q:"12. I like to doodle "},{q:"13. I find it helps to think in terms of mental pictures when doing many things"},{q:"14. After I meet someone for the first time, I can usually remember what they look like but not much about them."},{q:"15. I like to think of synonyms for words"},{q:"16. When I have forgotten something, I frequently try to form a mental picture to remember it"},{q:"17. I like learning new words"},{q:"18. I prefer to read instructions about how to do something rather than have someone show me "},{q:"19. I prefer activities that don’t require a lot of reading "},{q:"20. I seldom daydream"},{q:"21. I spend very little time attempting to increase my vocabulary "},{q:"22. My thinking often consists of mental pictures or images "}];
 
     return (<div className="background" id="home">
             <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}} className="question-box">
-                <Typography variant="h6">Please answer the following questions regarding yourself. There is no right or wrong answer. Please answer the questions as accurately as possible. </Typography>
-                <Typography variant="h6">Here are a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who likes to spend time with others? Please indicate the extent to which you agree or disagree with the following statements such that- </Typography>
+                <Typography variant="h6">The aim of this exercise is to determine the style or manner in which you perform different tasks. Your answers in the statements should reflect the manner in which you engage in each of the tasks mentioned. There is no right or wrong answer. We only ask that you provide honest and accurate answers. Please answer by selecting one of the four possible responses. For example, if the statement is “I seldom read books and this is your typical behavior, (even though you might read say one book a year ), you would circle “always true” response. </Typography>
                 {opts.map((opt,id) => <Typography variant="h6" key={id}>{opt}</Typography>)}
                 {mcqs.map((m,id) => <Mcq id={id} question={m.q} dispatch={dispatch} />)}
                 <Button variant="contained" style={{marginTop: "20px", alignSelf: "center"}}
@@ -31,7 +27,7 @@ function Mcq({id, question, dispatch})
 {
     const getOpts = () => {
         const opts = [];
-        for(let i = 1; i <= 5; ++i)
+        for(let i = 1; i <= 4; ++i)
         {
             opts.push(<FormControlLabel key={i} value={i} control={<Radio />} label={i} />);
         }

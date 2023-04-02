@@ -17,7 +17,7 @@ function PicQuestions()
 
     return (<div className="background" id="home">
         <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}}>
-            <Typography variant="h6">Please answer the following questions based on the narrative</Typography>
+            <Typography variant="h6">Please answer the following questions based on photos</Typography>
             
             <Typography variant="body2" style={{marginTop: "10px"}}>What are the photos about? </Typography>
             <TextField variant="outlined" required id="nq1" multiline
@@ -37,7 +37,7 @@ function PicQuestions()
             onChange={(e) => dispatch(setQ3_p(e.target.value))}
             />
 
-            <Typography variant="h6" style={{marginTop: "10px"}}>{"Please indicate the extent to which you felt the following while reading the narrative.  While reading the narrative I felt…"}</Typography>
+            <Typography variant="h6" style={{marginTop: "10px"}}>{"Please indicate the extent to which you felt the following while seeing the photos.  While seeing the photos I felt…"}</Typography>
             {opts.map((opt,id) => <Typography variant="h6" key={id}>{opt}</Typography>)}
 
             {mcqs.map((m,id) => <Mcq id={id} question={m.q} dispatch={dispatch} />)}

@@ -1,4 +1,4 @@
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import img1 from "../img1.jpg"
 import img2 from "../img2.png"
 import img3 from "../img3.png"
@@ -21,24 +21,31 @@ function Pics()
     let i = 0;
 
     const [currImage,setCurrImage] = useState(displayOrder[i]);
+    const [showIns, setShowIns] = useState(true);
 
     useEffect(() => {
-        intervalId = setInterval(() => {
-            i++;
-            if(i < displayOrder.length)
-                setCurrImage(displayOrder[i]);
-            else
-            {
-                clearInterval(intervalId);
-                setTimeout(() => navigate("/pics/q"), 1000*30);
-            }
-        }, 1000*30);
-    }, [])
+        if(showIns)
+            setTimeout(() => setShowIns(false), 10*1000);
+        else
+        {
+            intervalId = setInterval(() => {
+                i++;
+                if(i < displayOrder.length)
+                    setCurrImage(displayOrder[i]);
+                else
+                {
+                    clearInterval(intervalId);
+                    setTimeout(() => navigate("/pics/q"), 1000*30);
+                }
+            }, 1000*30);
+        }
+    }, [showIns])
     
 
     return(<div className="background" id="home">
             <Paper elevation={3} style={{width: "90%", height: "90%", padding: "5px", overflow: "fixed"}} >
-                <img src={currImage} width="100%" height="100%"/>
+                {showIns && <Typography variant="h5">A series of photos would be presented to you one after the other. Please look at the photos carefully. </Typography>}
+                {!showIns && <img src={currImage} width="100%" height="100%"/>}
             </Paper>
         </div>)
 }

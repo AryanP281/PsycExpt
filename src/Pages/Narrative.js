@@ -13,16 +13,20 @@ const passage  = ["Consider again that dot. That's here. That's home. That's us.
 function Narrative()
 {
     const narrativeAns = useSelector((state) => state.narrative);
-    const [showQs, setShowQs] = useState(false);
+    const [state, setState] = useState(0);
 
     useEffect(() => {
-        setTimeout(() => setShowQs(true), 4 * 60 * 1000); //4 * 60 * 1000
-    }, []);
+        switch(state) {
+            case 0: setTimeout(() => setState(1), 10*1000); break;
+            case 1 : setTimeout(() => setState(2), 4*60*1000); break; //4*60*1000
+        }
+    }, [state]);
     
     return(<div className="background" id="home">
         <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}}>
-            {!showQs && passage.map((para) => <Typography style={{marginTop: "20px"}} variant="body1">{para}</Typography>)}
-            {showQs && <Questionnaire />}
+            {state === 0 && <Typography variant="h5">A narrative would be presented to you. Please read the narrative carefully</Typography>}
+            {state === 1 && passage.map((para) => <Typography style={{marginTop: "20px"}} variant="body1">{para}</Typography>)}
+            {state === 2 && <Questionnaire />}
         </Paper>
     </div>)
 }

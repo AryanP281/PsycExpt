@@ -9,7 +9,7 @@ function Part3Questionnaire()
     const navigate = useNavigate();
     
     const getQuestions = () => {
-        const q = ["What do you think was the experiment about? ", "Have you participated in such experiments before?", "What did you think/feel after reading the narrative?", "What did you think/feel after seeing the photos?", "How do the photos and the narrative compare with each other?","What do you think was the hypothesis of the experiment?","Is there any reason for you to think that your responses to any part of the experiment may be invalid?"];
+        const q = ["What do you think was the experiment about? ", "Have you participated in such experiments before?", "What did you think/feel about what was presented to you?", "What did you think/feel about the tasks in the experiment?", "What do you think about the wording of the questions?","Is there any reason for you to think that your responses to any part of the experiment may be invalid?"];
         const el = [];
 
         for(let i = 0; i < q.length; ++i)

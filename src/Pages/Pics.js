@@ -44,7 +44,7 @@ function Pics()
 
     return(<div className="background" id="home">
             <Paper elevation={3} style={{width: "90%", height: "90%", padding: "5px", overflow: "fixed"}} >
-                {showIns && <Typography variant="h5">A series of photos would be presented to you one after the other. Please look at the photos carefully. </Typography>}
+                {showIns && <Typography variant="h5">A series of photos would be presented to you one after the other. Please look at the photos carefully.  The next photo would be presented after a specified amount of time on its own</Typography>}
                 {!showIns && <img src={currImage} width="100%" height="100%"/>}
             </Paper>
         </div>)

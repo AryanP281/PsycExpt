@@ -24,7 +24,7 @@ function Narrative()
     
     return(<div className="background" id="home">
         <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}}>
-            {state === 0 && <Typography variant="h5">A narrative would be presented to you. Please read the narrative carefully</Typography>}
+            {state === 0 && <Typography variant="h5">A narrative would be presented to you. Please read the narrative carefully.  The next page would be presented after specified amount of time on its own</Typography>}
             {state === 1 && passage.map((para) => <Typography style={{marginTop: "20px"}} variant="body1">{para}</Typography>)}
             {state === 2 && <Questionnaire />}
         </Paper>

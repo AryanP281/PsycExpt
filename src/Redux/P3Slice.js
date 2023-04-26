@@ -5,7 +5,7 @@ const getDefaultAns = (n) => {
     const ans = [];
     for(let i = 0; i < n; ++i)
     {
-        ans.push("");
+        ans.push({id:i,val:""});
     }
     return ans;
 };
@@ -13,10 +13,10 @@ const getDefaultAns = (n) => {
 const p3Slice = createSlice({
     name: "part3",
     initialState: {
-        ans : getDefaultAns(6)
+        ans : getDefaultAns(10)
     },
     reducers: {
-        setAns: (state, action) => {state.ans[action.payload.id] = action.payload.val}
+        setAns: (state, action) => {state.ans[action.payload.id].val = action.payload.val}
     }
 });
 

@@ -18,7 +18,7 @@ function Narrative()
     useEffect(() => {
         switch(state) {
             case 0: setTimeout(() => setState(1), 10*1000); break;
-            case 1 : setTimeout(() => setState(2), 4*60*1000); break; //4*60*1000
+            case 1 : setTimeout(() => setState(2),  4*60*1000); break; //4*60*1000
         }
     }, [state]);
     

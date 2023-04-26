@@ -56,7 +56,6 @@ function saveData(successCallback, failureCallback, exptData, p1Data, p2Data, p3
     return savePicDataP(userDetails.initials,exptData); 
   })
   .then(() => saveP1DataP(userDetails.initials, p1Data))
-  .then(() => saveP2DataP(userDetails.initials, p2Data))
   .then(() => saveP3DataP(userDetails.initials, p3Data))
   .then(() => successCallback())
   .catch((err) => {

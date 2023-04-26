@@ -5,7 +5,7 @@ const defaultMcqs = () => {
     const res = [];
     for(let i = 0; i < 30; ++i)
     {
-        res.push(-1);
+        res.push({id:i,val:-1});
     }
     return res;
 };
@@ -22,7 +22,7 @@ const picsSlice = createSlice({
         setQ1_p : (state,action) => {state.q1 = action.payload},
         setQ2_p : (state,action) => {state.q2 = action.payload},
         setQ3_p : (state,action) => {state.q2 = action.payload},
-        setMcqVal_p: (state, action) => {state.mcqs[action.payload.id] = action.payload.val}
+        setMcqVal_p: (state, action) => {state.mcqs[action.payload.id].val = action.payload.val}
     }
 });
 

@@ -23,7 +23,6 @@ function App() {
           <Route path="/save" element={<Saving />} />
           <Route path="/p3" element={<Part3Questionnaire />} />
           <Route path="/p1" element={<Part1Questionnaire />} />
-          <Route path="/p2" element={<Part2Questionnaire />} />
           <Route path="/end" element={<End />} />
         </Routes>
       </div>

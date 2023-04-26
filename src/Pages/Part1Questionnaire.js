@@ -12,7 +12,7 @@ function Part1Questionnaire()
     console.log(ans)
     
     const opts = "1= Disagree Strongly;\n2 = Disagree a little;\n3 = Neither agree nor disagree;\n4 = Agree a little;\n5 = Agree strongly;".split('\n');
-    const mcqs = [{q:"1. Is talkative "},{q:"2. Tends to find fault with others"},{q:"3. Does a thorough job "},{q:"4. Is depressed, blue "},{q:"5. Is original, comes up with new ideas "},{q:"6. Is reserved "},{q:"7. Is helpful and unselfish with others "},{q:"8. Can be somewhat careless "},{q:"9. Is relaxed, and handles stress well"},{q:"10. Is curious about many different things."},{q:"11. Is full of energy."},{q:"12. Starts quarrels with others"},{q:"13. Is a reliable worker "},{q:"14. Can be tense "},{q:"15. Is ingenious, a deep thinker "},{q:"16. Generates a lot of enthusiasm "},{q:"17. Has a forgiving nature"},{q:"18. Tends to be disorganized "},{q:"19. Worries a lot "},{q:"20. Has an active imagination "},{q:"21. Tends to be quiet "},{q:"22. Is generally trusting "},{q:"23. Tends to be lazy"},{q:"24. Is emotionally stable, not easily upset"},{q:"25. Is inventive"},{q:"26. Has an assertive personality"},{q:"27. Can be cold and aloof"},{q:"28. Perseveres until the task is finished"},{q:"29. Can be moody"},{q:"30. Values artistic, aesthetic experiences"},{q:"31. Is sometimes shy, inhibited"},{q:"32. Is considerate and kind to almost everyone"},{q:"33. Does things efficiently"},{q:"34. Remains calm in tense situations"},{q:"35. Prefers work that is routine"},{q:"36. Is outgoing, sociable"},{q:"37. Is sometimes rude to others"},{q:"38. Makes plans and follows through with them"},{q:"39. Gets nervous easily"},{q:"40. Likes to reflect, play with ideas"},{q:"41. Has few artistic interests"},{q:"42. Likes to cooperate with others"},{q:"43. Is easily distracted"},{q:"44. Is sophisticated in art, music, or literature"}];
+    const mcqs = [{q:"1. Is original, comes up with new ideas "},{q:"2. Is curious about many different things."},{q:"3. Is ingenious, a deep thinker "},{q:"4. Has an active imagination "},{q:"5. Is inventive"},{q:"6. Values artistic, aesthetic experiences"},{q:"7. Prefers work that is routine"},{q:"8. Likes to reflect, play with ideas"},{q:"9. Has few artistic interests"},{q:"10. Is sophisticated in art, music, or literature"}];
 
     return (<div className="background" id="home">
             <Paper elevation={3} style={{width: "90%", height: "100%", padding: "10px", overflow: "auto"}} className="question-box">
@@ -21,7 +21,7 @@ function Part1Questionnaire()
                 {opts.map((opt,id) => <Typography variant="h6" key={id}>{opt}</Typography>)}
                 {mcqs.map((m,id) => <Mcq id={id} question={m.q} dispatch={dispatch} />)}
                 <Button variant="contained" style={{marginTop: "20px", alignSelf: "center"}}
-                onClick={(e) => {navigate("/p2")}}
+                onClick={(e) => {navigate("/p3")}}
                 >Submit</Button>
             </Paper>
         </div>)

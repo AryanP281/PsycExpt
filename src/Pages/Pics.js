@@ -1,11 +1,11 @@
 import { Paper, Typography } from "@mui/material";
-import img1 from "../img1.jpg"
+import img1 from "../img1.png"
 import img2 from "../img2.png"
 import img3 from "../img3.png"
 import img4 from "../img4.jpg"
 import img5 from "../img5.jpg"
 import img6 from "../img6.jpg"
-import img7 from "../img7.png"
+import img7 from "../img7.jpg"
 import img8 from "../img8.jpg"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +25,7 @@ function Pics()
 
     useEffect(() => {
         if(showIns)
-            setTimeout(() => setShowIns(false), 10*1000);
+            setTimeout(() => setShowIns(false), 1*1000); //10*1000
         else
         {
             intervalId = setInterval(() => {
@@ -35,9 +35,9 @@ function Pics()
                 else
                 {
                     clearInterval(intervalId);
-                    setTimeout(() => navigate("/pics/q"), 1000*30);
+                    setTimeout(() => navigate("/pics/q"), 1000*1); //1000*30
                 }
-            }, 1000*30);
+            }, 1000*1); //1000*30
         }
     }, [showIns])
     

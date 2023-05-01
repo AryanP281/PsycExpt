@@ -21,7 +21,7 @@ const picsSlice = createSlice({
     reducers: {
         setQ1_p : (state,action) => {state.q1 = action.payload},
         setQ2_p : (state,action) => {state.q2 = action.payload},
-        setQ3_p : (state,action) => {state.q2 = action.payload},
+        setQ3_p : (state,action) => {state.q3 = action.payload},
         setMcqVal_p: (state, action) => {state.mcqs[action.payload.id].val = action.payload.val}
     }
 });

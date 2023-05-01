@@ -19,6 +19,7 @@ function Part1Questionnaire()
                 <Typography variant="h6">Please answer the following questions regarding yourself. There is no right or wrong answer. Please answer the questions as accurately as possible. </Typography>
                 <Typography variant="h6">Here are a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who likes to spend time with others? Please indicate the extent to which you agree or disagree with the following statements such that- </Typography>
                 {opts.map((opt,id) => <Typography variant="h6" key={id}>{opt}</Typography>)}
+                <Typography variant='h5' style={{marginTop: "20px", textDecoration: "underline"}}>I see myself as someone who</Typography>
                 {mcqs.map((m,id) => <Mcq id={id} question={m.q} dispatch={dispatch} />)}
                 <Button variant="contained" style={{marginTop: "20px", alignSelf: "center"}}
                 onClick={(e) => {navigate("/p3")}}

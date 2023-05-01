@@ -13,7 +13,7 @@ const getDefaultAns = (n) => {
 const p3Slice = createSlice({
     name: "part3",
     initialState: {
-        ans : getDefaultAns(10)
+        ans : getDefaultAns(9)
     },
     reducers: {
         setAns: (state, action) => {state.ans[action.payload.id].val = action.payload.val}

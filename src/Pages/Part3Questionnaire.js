@@ -9,9 +9,10 @@ function Part3Questionnaire()
     const navigate = useNavigate();
     
     const getQuestions = () => {
-        const q = ["What do you think was the experiment about? ", "Have you participated in such experiments before?", "What did you think/feel about what was presented to you?", "What did you think/feel about the tasks in the experiment?", "What do you think about the wording of the questions?","Is there any reason for you to think that your responses to any part of the experiment may be invalid?","Do you have a major in astronomy or are involved in fields related to it e.g. astrophysics, meteorology etc. If yes, specify which one(s) and how long you have been involved in this field.", "Do you have any regrets about this choice? Why?/Why not?"];
+        const q = ["What do you think was the experiment about? ", "Have you participated in such experiments before?", "What did you think/feel about what was presented to you?", "Is there any reason for you to think that your responses to any part of the experiment may be invalid?","Do you have a major in astronomy or are involved in fields related to it e.g. astrophysics, meteorology etc. If yes, specify which one(s) and how long you have been involved in this field.", "Do you have any regrets about this choice? Why?/Why not?"];
         const q2 = [{q: "If you have regrets, which field would you have preferred/would you choose now? (you can choose multiple options, but not all)", opts: ['Creative writing ', 'Music ', 'Architecture  ', 'Politics ', 'Finance', 'Computers ', 'Law', 'Not Applicable']},
-                    {q: "Currently, how often do you read books/watch shows on astronomy?", opts: ['(a) At Least once a month', '(b) At Least once in six months', '(c) At Least once a year', '(d) Not at all']}]
+                    {q: "Currently, how often do you read books/watch shows on astronomy?", opts: ['(a) At Least once a month', '(b) At Least once in six months', '(c) At Least once a year', '(d) Not at all']},
+                    {q: "On a scale of 1-7, with 1 being low and 7 high, rate your knowledge about astronomy.", opts:['1', '2', '3', '4', '5', '6', '7']}]
 
         const el = [];
 

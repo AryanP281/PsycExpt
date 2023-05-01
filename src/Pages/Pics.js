@@ -25,7 +25,7 @@ function Pics()
 
     useEffect(() => {
         if(showIns)
-            setTimeout(() => setShowIns(false), 1*1000); //10*1000
+            setTimeout(() => setShowIns(false), 10*1000); //10*1000
         else
         {
             intervalId = setInterval(() => {
@@ -35,9 +35,9 @@ function Pics()
                 else
                 {
                     clearInterval(intervalId);
-                    setTimeout(() => navigate("/pics/q"), 1000*1); //1000*30
+                    setTimeout(() => navigate("/pics/q"), 1000*30); //1000*30
                 }
-            }, 1000*1); //1000*30
+            }, 1000*30); //1000*30
         }
     }, [showIns])
     

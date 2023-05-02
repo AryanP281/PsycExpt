@@ -12,13 +12,13 @@ import { useNavigate } from "react-router-dom";
 
 let intervalId;
 
+const displayOrder = [img1,img2,img3,img4,img5,img6,img7,img8];
+shuffleArray(displayOrder)
+let i = 0;
+
 function Pics()
 {
     const navigate = useNavigate();
-    
-    const displayOrder = [img1,img2,img3,img4,img5,img6,img7,img8];
-    shuffleArray(displayOrder)
-    let i = 0;
 
     const [currImage,setCurrImage] = useState(displayOrder[i]);
     const [showIns, setShowIns] = useState(true);

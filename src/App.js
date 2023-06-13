@@ -13,7 +13,7 @@ import Part2Questionnaire from "./Pages/Part2Questionnaire";
 function App() {
   return (
     <Router>
-      {/*<div className="App">
+      <div className="App">
         <Routes>
           <Route path="/" element={<Start />} />
           <Route path="/demo" element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/p1" element={<Part1Questionnaire />} />
           <Route path="/end" element={<End />} />
         </Routes>
-  </div>*/}
+      </div>
     </Router>
   );
 }

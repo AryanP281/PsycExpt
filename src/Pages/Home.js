@@ -86,6 +86,7 @@ function Home()
                     else
                     {
                         sessionStorage.setItem("demoDetails", JSON.stringify({initials,emailAddr,age,gender,income,edu,occu,headEdu,headOccu}));
+                        sessionStorage.setItem("Tag", "n");
                         navigate("/narrative");
                         /*if(Math.random() < 0.5)
                         {

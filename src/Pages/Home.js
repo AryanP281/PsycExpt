@@ -86,9 +86,7 @@ function Home()
                     else
                     {
                         sessionStorage.setItem("demoDetails", JSON.stringify({initials,emailAddr,age,gender,income,edu,occu,headEdu,headOccu}));
-                        sessionStorage.setItem("Tag", "n");
-                        navigate("/narrative");
-                        /*if(Math.random() < 0.5)
+                        if(Math.random() < 0.5)
                         {
                             sessionStorage.setItem("Tag", "p");
                             navigate("/pics");
@@ -97,7 +95,7 @@ function Home()
                         {
                             sessionStorage.setItem("Tag", "n");
                             navigate("/narrative");
-                        }*/
+                        }
                     }
                 }}
                 >Submit</Button>
